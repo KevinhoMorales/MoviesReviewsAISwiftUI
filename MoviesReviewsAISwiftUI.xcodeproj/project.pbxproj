@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2AE312492DB9A298007B66F6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE312482DB9A298007B66F6 /* FirebaseAnalytics */; };
+		2AE3124B2DB9A298007B66F6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE3124A2DB9A298007B66F6 /* FirebaseAuth */; };
+		2AE3124D2DB9A298007B66F6 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE3124C2DB9A298007B66F6 /* FirebaseRemoteConfig */; };
+		2AE312B22DB9F584007B66F6 /* FirebaseVertexAI in Frameworks */ = {isa = PBXBuildFile; productRef = 2AE312B12DB9F584007B66F6 /* FirebaseVertexAI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2AE311E62DB925F0007B66F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +59,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE3124D2DB9A298007B66F6 /* FirebaseRemoteConfig in Frameworks */,
+				2AE312B22DB9F584007B66F6 /* FirebaseVertexAI in Frameworks */,
+				2AE312492DB9A298007B66F6 /* FirebaseAnalytics in Frameworks */,
+				2AE3124B2DB9A298007B66F6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +89,7 @@
 				2AE311D52DB925EE007B66F6 /* MoviesReviewsAISwiftUI */,
 				2AE311E82DB925F0007B66F6 /* MoviesReviewsAISwiftUITests */,
 				2AE311F22DB925F0007B66F6 /* MoviesReviewsAISwiftUIUITests */,
+				2AE312B02DB9F584007B66F6 /* Frameworks */,
 				2AE311D42DB925EE007B66F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +102,13 @@
 				2AE311EF2DB925F0007B66F6 /* MoviesReviewsAISwiftUIUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2AE312B02DB9F584007B66F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +131,10 @@
 			);
 			name = MoviesReviewsAISwiftUI;
 			packageProductDependencies = (
+				2AE312482DB9A298007B66F6 /* FirebaseAnalytics */,
+				2AE3124A2DB9A298007B66F6 /* FirebaseAuth */,
+				2AE3124C2DB9A298007B66F6 /* FirebaseRemoteConfig */,
+				2AE312B12DB9F584007B66F6 /* FirebaseVertexAI */,
 			);
 			productName = MoviesReviewsAISwiftUI;
 			productReference = 2AE311D32DB925EE007B66F6 /* MoviesReviewsAISwiftUI.app */;
@@ -195,6 +218,9 @@
 			);
 			mainGroup = 2AE311CA2DB925EE007B66F6;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2AE312472DB9A298007B66F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2AE311D42DB925EE007B66F6 /* Products */;
 			projectDirPath = "";
@@ -410,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhomorales.MoviesReviewsAISwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhomorales.moviesreviewsaiswiftui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -438,7 +464,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhomorales.MoviesReviewsAISwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhomorales.moviesreviewsaiswiftui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -558,6 +584,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2AE312472DB9A298007B66F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2AE312482DB9A298007B66F6 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AE312472DB9A298007B66F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		2AE3124A2DB9A298007B66F6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AE312472DB9A298007B66F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2AE3124C2DB9A298007B66F6 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AE312472DB9A298007B66F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		2AE312B12DB9F584007B66F6 /* FirebaseVertexAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AE312472DB9A298007B66F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseVertexAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2AE311CB2DB925EE007B66F6 /* Project object */;
 }
