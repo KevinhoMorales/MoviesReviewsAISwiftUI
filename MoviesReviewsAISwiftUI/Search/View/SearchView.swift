@@ -77,7 +77,7 @@ struct MovieDetailView: View {
                         ProgressView()
                             .frame(maxWidth: .infinity, maxHeight: 200)
                             .onAppear {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                     if case .empty = phase {
                                         // Placeholder here if desired
                                     }
@@ -119,10 +119,13 @@ struct MovieDetailView: View {
             Button(action: toggleFavorite) {
                 HStack {
                     Image(systemName: isFavorite ? "heart.fill" : "heart")
+                        .foregroundColor(.pink)
                     Text(isFavorite ? "Quitar de Favoritos" : "Agregar a Favoritos")
+                        .foregroundColor(.pink)
+                        .bold()
                 }
                 .padding()
-                .background(Color.blue.opacity(0.1))
+                .background(Color.pink.opacity(0.1))
                 .cornerRadius(8)
             }
             .padding(.top)

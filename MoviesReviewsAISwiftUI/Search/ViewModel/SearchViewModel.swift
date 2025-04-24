@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreData
 
 final class SearchViewModel: ObservableObject {
     @Published var searchQuery: String = ""
@@ -67,10 +68,31 @@ final class SearchViewModel: ObservableObject {
     func addToFavorites() {
         guard let movie = movie else { return }
         print("Adding movie to favorites: \(movie.title)")
+
+        let context = PersistenceController.shared.container.viewContext
+        let favorite = FavoriteMovie(context: context)
+        favorite.id = movie.id
+        favorite.title = movie.title
+        favorite.year = movie.year
+        favorite.genre = movie.genre
+        favorite.movieDescription = movie.description
+        favorite.coverImageURL = movie.coverImageURL
     }
     
     func removeFromFavorites() {
         guard let movie = movie else { return }
         print("Removing movie from favorites: \(movie.title)")
+
+        let context = PersistenceController.shared.container.viewContext
+        let fetchRequest: NSFetchRequest<FavoriteMovie> = FavoriteMovie.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", movie.id as CVarArg)
+
+        do {
+            let favorites = try context.fetch(fetchRequest)
+            favorites.forEach { context.delete($0) }
+            try context.save()
+        } catch {
+            print("Failed to remove favorite movie: \(error.localizedDescription)")
+        }
     }
 }
